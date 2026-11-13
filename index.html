@@ -69,8 +69,12 @@
 <script>
     let speech = new SpeechSynthesisUtterance();
     let wording = "Hello";
-    document.querySelector("button").addEventListener("click, () =>{
-        speech.text = wordings;
+    
+    textChange(textthing) {
+        wording = textthing;
+    }
+    document.querySelector("button").addEventListener("click, () => {
+        speech.text = wording;
         window.speachSynthesis.speak(speech);
     });
 const scriptURL = "https://script.google.com/macros/s/AKfycbw3WFndI5TXRubLfDryuZ7N57yVc9C_2GZTMe5tzfGa0iKcYNu7bJ-Z3o9m3-PrUX2S2A/exec";
@@ -94,7 +98,4 @@ const scriptURL = "https://script.google.com/macros/s/AKfycbw3WFndI5TXRubLfDryuZ
             swal("Error", "Something went wrong. please try again!", "error");
           });
       });
-    textChange(textthing) {
-        wording = textthing;
-    }
 </script>
