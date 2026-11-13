@@ -45,7 +45,7 @@
             <input class="form-check-input" type="checkbox" id="advanced">
             <label class="form-check-label" for="advanced">I am in some sort of advanced curriculum.</label>
           </div>
-          <button type="submit" class="btn btn-primary btn-block">
+          <button type="submit" class="btn btn-primary btn-block" onclick="textChange('Here is my first puzzle for you. Here I have Lilly the lillypad. She doubles size every day. If on day 20 she is 40 inches, on what day will she be 20 inches?')">
             Submit
           </button>
         
@@ -67,6 +67,12 @@
       }
 </style>
 <script>
+    let speech = new SpeechSynthesisUtterance();
+    let wording = "Hello";
+    document.querySelector("button").addEventListener("click, () =>{
+        speech.text = wordings;
+        window.speachSynthesis.speak(speech);
+    });
 const scriptURL = "https://script.google.com/macros/s/AKfycbw3WFndI5TXRubLfDryuZ7N57yVc9C_2GZTMe5tzfGa0iKcYNu7bJ-Z3o9m3-PrUX2S2A/exec";
       const form = document.forms["submit-to-google-sheet"];
       form.addEventListener("submit", (e) => {
@@ -88,4 +94,7 @@ const scriptURL = "https://script.google.com/macros/s/AKfycbw3WFndI5TXRubLfDryuZ
             swal("Error", "Something went wrong. please try again!", "error");
           });
       });
+    textChange(textthing) {
+        wording = textthing;
+    }
 </script>
