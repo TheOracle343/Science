@@ -24,9 +24,15 @@
     </style>
   </head>
   <body class="bg-light">
-    <div class="container">
+    <div class="container" id="welcomescreen">
+      <h1>Logic Puzzles</h1>
+      <p>A simple space dedicated to the art of deduction. Whether you're a seasoned problem-solver or just looking to wake up your brain, jump in and test your wits</p>
+      <button onclick="aboutYou();">Let's get started!</button>
+    </div>
+    <div class="container" id="Personal data">
       <div class="form-container">
-        <h4 class="text-center mb-4">Form Submission to Google Sheet</h4>
+        <h4 class="text-center mb-4">About you</h4>
+        <h6 class="text-center mb-4">Please be truthfull</h6>
         <form id="submit-to-google-sheet">
           <div class="form-group">
             <label for="name">Name:</label>
@@ -72,14 +78,18 @@
           <div class="form-group form-check mt-2">
             <input class="form-check-input" type="checkbox" id="age" />
             <label class="form-check-label" for="age"
-              >Check if you are in an advanced curriculum.</label
+              >Please check if you are in an advanced curriculum.</label
             >
           </div>
-          <button type="submit" class="btn btn-primary btn-block">
+          <button type="submit" class="btn btn-primary btn-block" onclick="lillypad();">
             Submit
           </button>
+          <audio src="Our First Puzzle.mp3" style="display:none;" id="myAudio"></audio>
         </form>
       </div>
+    </div>
+    <div class="container" id="FirstPuzzle">
+
     </div>
 
     <script>
@@ -111,6 +121,17 @@
             swal("Error", "Something went wrong. please try again!", "error");
           });
       });
+      function aboutYou() {
+        document.getElementById("welcomescreen").style.display = "none";
+        document.getElementById("Personal Data").style.display = "block";
+      };
+      function playSound() {
+      const audio = document.getElementById("myAudio");
+      audio.currentTime = 0; // Rewinds to start so rapid clicks replay immediately
+      audio.play();
+      document.getElementById("Personal Data").style.display = "none";
+      document.getElementById("FirstPuzzle").style.display = "block";
+    };
     </script>
   </body>
 </html>
