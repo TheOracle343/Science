@@ -81,8 +81,8 @@
               >Please check if you are in an advanced curriculum.</label
             >
           </div>
-          <button type="submit" class="btn btn-primary btn-block" onclick="lillypad();">
-            Submit
+          <button class="btn btn-primary btn-block" onclick="lillypad();">
+            Next
           </button>
           <audio src="Our First Puzzle.mp3" style="display:none;" id="myAudio"></audio>
         </form>
@@ -93,6 +93,7 @@
     </div>
 
     <script>
+      document.getElementById("Personal Data").style.display = "none";
       const scriptURL =                       
       "https://script.google.com/macros/s/AKfycbw3WFndI5TXRubLfDryuZ7N57yVc9C_2GZTMe5tzfGa0iKcYNu7bJ-Z3o9m3-PrUX2S2A/exec";
       const form = document.forms["submit-to-google-sheet"];
@@ -129,7 +130,6 @@
       const audio = document.getElementById("myAudio");
       audio.currentTime = 0; // Rewinds to start so rapid clicks replay immediately
       audio.play();
-      document.getElementById("Personal Data").style.display = "none";
       document.getElementById("FirstPuzzle").style.display = "block";
     };
     </script>
